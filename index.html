@@ -58,12 +58,32 @@
     .brand-title { font-family: "Source Serif 4", serif; font-size: 24px; }
     .brand-subtitle { font-size: 13px; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; }
     .nav { display: flex; gap: 16px; flex-wrap: wrap; font-size: 14px; }
+    .language {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      font-size: 13px;
+    }
+    .lang-btn {
+      border: 1px solid rgba(0,0,0,0.1);
+      background: #fff;
+      padding: 6px 10px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .lang-btn.active {
+      background: var(--accent);
+      color: #fff;
+      border-color: transparent;
+    }
     .card {
       background: var(--paper);
       border-radius: var(--radius);
       padding: 22px;
       box-shadow: var(--shadow);
       border: 1px solid rgba(0,0,0,0.06);
+      animation: rise 420ms ease;
     }
     .hero { display: grid; grid-template-columns: minmax(0,1.2fr) minmax(0,0.8fr); gap: 24px; }
     .h1 { font-family: "Source Serif 4", serif; font-size: 36px; margin: 0 0 12px; }
@@ -79,6 +99,13 @@
     .kicker { text-transform: uppercase; letter-spacing: 0.12em; font-size: 12px; color: var(--muted); }
     .small { font-size: 14px; color: var(--muted); }
     .footer { margin-top: 36px; font-size: 13px; color: var(--muted); }
+    .lang { display: none; }
+    .lang.active { display: block; }
+    .lang-inline.active { display: inline; }
+    @keyframes rise {
+      from { transform: translateY(8px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
     @media (max-width: 800px) {
       .hero { grid-template-columns: 1fr; }
       .h1 { font-size: 30px; }
@@ -92,18 +119,31 @@
         <div class="brand-mark">H1</div>
         <div>
           <div class="brand-title">Hesap101</div>
-          <div class="brand-subtitle">Yasal Belgeler</div>
+          <div class="brand-subtitle">Legal</div>
         </div>
       </div>
       <nav class="nav">
-        <a href="index.html">Ana Sayfa</a>
-        <a href="privacy-policy.html">Gizlilik Politikası</a>
-        <a href="terms-of-service.html">Kullanım Koşulları</a>
+        <a href="index.html">
+          <span class="lang lang-tr lang-inline">Ana Sayfa</span>
+          <span class="lang lang-en lang-inline">Home</span>
+        </a>
+        <a href="privacy-policy.html">
+          <span class="lang lang-tr lang-inline">Gizlilik Politikası</span>
+          <span class="lang lang-en lang-inline">Privacy Policy</span>
+        </a>
+        <a href="terms-of-service.html">
+          <span class="lang lang-tr lang-inline">Kullanım Koşulları</span>
+          <span class="lang lang-en lang-inline">Terms of Service</span>
+        </a>
       </nav>
+      <div class="language">
+        <button class="lang-btn" data-lang="tr" type="button">TR</button>
+        <button class="lang-btn" data-lang="en" type="button">EN</button>
+      </div>
     </header>
 
     <section class="hero">
-      <div class="card">
+      <div class="card lang lang-tr">
         <div class="kicker">Şeffaflık</div>
         <h1 class="h1">Verinizi nasıl işlediğimizi açıkça anlatıyoruz.</h1>
         <p class="lead">
@@ -112,7 +152,16 @@
           bulabilirsiniz.
         </p>
       </div>
-      <div class="card">
+      <div class="card lang lang-en">
+        <div class="kicker">Transparency</div>
+        <h1 class="h1">We explain clearly how we process your data.</h1>
+        <p class="lead">
+          Hesap101 processes user-uploaded photos to improve the service and train the model.
+          This page summarizes our data collection and usage rules.
+        </p>
+      </div>
+
+      <div class="card lang lang-tr">
         <div class="kicker">İletişim</div>
         <p class="small">
           Geliştirici: Ahmet Yardımcı (Bireysel Geliştirici)<br />
@@ -120,34 +169,90 @@
           Adres: Türkiye / Ankara
         </p>
         <p class="small">
-          Hesap silme: Uygulama içinde Ayarlar > Hesap > Sil menüsünden yapılır.
+          Hesap silme: Uygulama içinde Ayarlar &gt; Hesap &gt; Sil menüsünden yapılır.
+        </p>
+      </div>
+      <div class="card lang lang-en">
+        <div class="kicker">Contact</div>
+        <p class="small">
+          Developer: Ahmet Yardımcı (Individual Developer)<br />
+          Email: yardimcistudio@gmail.com<br />
+          Address: Turkey / Ankara
+        </p>
+        <p class="small">
+          Account deletion: In-app via Settings &gt; Account &gt; Delete.
         </p>
       </div>
     </section>
 
     <section class="grid">
       <a class="card card-link" href="privacy-policy.html">
-        <div class="kicker">Gizlilik</div>
-        <h3>Gizlilik Politikası</h3>
-        <p class="small">Hangi verileri topluyoruz, neden topluyoruz, nasıl saklıyoruz?</p>
+        <div class="kicker">Privacy</div>
+        <h3 class="lang lang-tr">Gizlilik Politikası</h3>
+        <h3 class="lang lang-en">Privacy Policy</h3>
+        <p class="small lang lang-tr">Hangi verileri topluyoruz, neden topluyoruz, nasıl saklıyoruz?</p>
+        <p class="small lang lang-en">What data we collect, why we collect it, and how we store it.</p>
       </a>
       <a class="card card-link" href="terms-of-service.html">
-        <div class="kicker">Koşullar</div>
-        <h3>Kullanım Koşulları</h3>
-        <p class="small">Hizmeti kullanırken uymanız gereken kurallar ve haklarınız.</p>
+        <div class="kicker">Terms</div>
+        <h3 class="lang lang-tr">Kullanım Koşulları</h3>
+        <h3 class="lang lang-en">Terms of Service</h3>
+        <p class="small lang lang-tr">Hizmeti kullanırken uymanız gereken kurallar ve haklarınız.</p>
+        <p class="small lang lang-en">Rules and rights that apply when using the service.</p>
       </a>
       <div class="card">
-        <div class="kicker">Hesap</div>
-        <h3>Hesap Silme</h3>
-        <p class="small">
-          Hesap silme talebi uygulama içinden yapılır (Ayarlar > Hesap > Sil).
-        </p>
+        <div class="kicker">Account</div>
+        <h3 class="lang lang-tr">Hesap Silme</h3>
+        <h3 class="lang lang-en">Account Deletion</h3>
+        <p class="small lang lang-tr">Hesap silme talebi uygulama içinden yapılır.</p>
+        <p class="small lang lang-en">Account deletion is available inside the app.</p>
       </div>
     </section>
 
     <footer class="footer">
-      Son güncelleme: 21 Şubat 2026
+      <span class="lang lang-tr">Son güncelleme: 21 Şubat 2026</span>
+      <span class="lang lang-en">Last updated: February 21, 2026</span>
     </footer>
   </div>
+
+  <script>
+    (function () {
+      const buttons = document.querySelectorAll(".lang-btn");
+      const blocks = document.querySelectorAll(".lang");
+
+      function detectLang() {
+        const params = new URLSearchParams(window.location.search);
+        const query = params.get("lang");
+        if (query === "tr" || query === "en") return query;
+        if (window.location.hash === "#en") return "en";
+        if (window.location.hash === "#tr") return "tr";
+        return (navigator.language || "").toLowerCase().startsWith("tr") ? "tr" : "en";
+      }
+
+      function setLang(lang) {
+        document.documentElement.lang = lang;
+        blocks.forEach((el) => {
+          if (el.classList.contains(`lang-${lang}`)) {
+            el.classList.add("active");
+          } else {
+            el.classList.remove("active");
+          }
+        });
+        buttons.forEach((btn) => {
+          btn.classList.toggle("active", btn.dataset.lang === lang);
+        });
+        const params = new URLSearchParams(window.location.search);
+        params.set("lang", lang);
+        const newUrl = `${window.location.pathname}?${params.toString()}`;
+        window.history.replaceState({}, "", newUrl);
+      }
+
+      buttons.forEach((btn) => {
+        btn.addEventListener("click", () => setLang(btn.dataset.lang));
+      });
+
+      setLang(detectLang());
+    })();
+  </script>
 </body>
 </html>
