@@ -3,60 +3,40 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Yasal Bilgiler | Hesap101</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet" />
+  <title>Legal Information | Hesap 101</title>
   <style>
     :root {
-      --bg: #f6f1e9;
-      --paper: #fffdf8;
-      --ink: #171717;
-      --muted: #5f5a52;
+      --bg: #ffffff;
+      --paper: #ffffff;
+      --ink: #111827;
+      --muted: #4b5563;
       --accent: #0f6b5b;
-      --accent-2: #b36a1d;
-      --radius: 16px;
-      --shadow: 0 18px 50px rgba(24, 24, 24, 0.08);
+      --border: #e5e7eb;
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
-      font-family: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
       background: var(--bg);
       color: var(--ink);
       line-height: 1.6;
-      position: relative;
     }
-    body::before {
-      content: "";
-      position: fixed;
-      inset: -20% -10% auto;
-      height: 55vh;
-      background:
-        radial-gradient(60% 60% at 20% 20%, rgba(15, 107, 91, 0.18), transparent 60%),
-        radial-gradient(45% 45% at 80% 10%, rgba(179, 106, 29, 0.18), transparent 60%),
-        linear-gradient(135deg, rgba(255,255,255,0.7), rgba(246,241,233,0));
-      z-index: -1;
-    }
-    a { color: var(--accent); text-decoration: none; }
+    a { color: #0b57d0; text-decoration: none; }
     a:hover { text-decoration: underline; }
-    .container { max-width: 980px; margin: 0 auto; padding: 40px 20px 64px; }
+    .container { max-width: 960px; margin: 0 auto; padding: 24px 16px 48px; }
     .site-header {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
       gap: 16px;
-      margin-bottom: 32px;
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
     }
     .brand { display: flex; align-items: center; gap: 12px; }
-    .brand-mark {
-      width: 42px; height: 42px; border-radius: 12px;
-      background: var(--accent); color: #fff; display: grid; place-items: center;
-      font-weight: 700; font-family: "Source Serif 4", serif;
-    }
-    .brand-title { font-family: "Source Serif 4", serif; font-size: 24px; }
-    .brand-subtitle { font-size: 13px; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; }
+    .brand-title { font-size: 18px; font-weight: 700; }
+    .brand-subtitle { font-size: 12px; color: var(--muted); }
     .nav { display: flex; gap: 16px; flex-wrap: wrap; font-size: 14px; }
     .language {
       display: flex;
@@ -65,50 +45,52 @@
       font-size: 13px;
     }
     .lang-btn {
-      border: 1px solid rgba(0,0,0,0.1);
+      border: 1px solid var(--border);
       background: #fff;
       padding: 6px 10px;
-      border-radius: 999px;
+      border-radius: 6px;
       cursor: pointer;
       font-weight: 600;
+      color: var(--ink);
     }
     .lang-btn.active {
-      background: var(--accent);
-      color: #fff;
-      border-color: transparent;
+      border-color: var(--accent);
+      color: var(--accent);
+      background: #f0fdf9;
     }
     .card {
       background: var(--paper);
-      border-radius: var(--radius);
-      padding: 22px;
-      box-shadow: var(--shadow);
-      border: 1px solid rgba(0,0,0,0.06);
-      animation: rise 420ms ease;
+      border-radius: 8px;
+      padding: 16px;
+      border: 1px solid var(--border);
     }
-    .hero { display: grid; grid-template-columns: minmax(0,1.2fr) minmax(0,0.8fr); gap: 24px; }
-    .h1 { font-family: "Source Serif 4", serif; font-size: 36px; margin: 0 0 12px; }
-    .lead { font-size: 18px; color: var(--muted); }
+    .hero { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .h1 { font-size: 28px; line-height: 1.25; margin: 0 0 10px; }
+    .lead { font-size: 16px; color: var(--muted); margin: 0; }
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 16px;
-      margin-top: 24px;
+      margin-top: 16px;
     }
-    .card-link { color: inherit; text-decoration: none; display: block; transition: transform 0.15s ease, box-shadow 0.15s ease; }
-    .card-link:hover { transform: translateY(-2px); box-shadow: 0 22px 60px rgba(24, 24, 24, 0.12); }
+    .card-link { color: inherit; text-decoration: none; display: block; }
+    .card-link:hover { border-color: #d1d5db; }
     .kicker { text-transform: uppercase; letter-spacing: 0.12em; font-size: 12px; color: var(--muted); }
     .small { font-size: 14px; color: var(--muted); }
-    .footer { margin-top: 36px; font-size: 13px; color: var(--muted); }
+    h3 { margin: 6px 0 8px; font-size: 18px; }
+    .footer {
+      margin-top: 24px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      font-size: 13px;
+      color: var(--muted);
+    }
     .lang { display: none; }
     .lang.active { display: block; }
     .lang-inline.active { display: inline; }
-    @keyframes rise {
-      from { transform: translateY(8px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
     @media (max-width: 800px) {
       .hero { grid-template-columns: 1fr; }
-      .h1 { font-size: 30px; }
+      .h1 { font-size: 24px; }
     }
   </style>
 </head>
@@ -116,9 +98,8 @@
   <div class="container">
     <header class="site-header">
       <div class="brand">
-        <div class="brand-mark">H1</div>
         <div>
-          <div class="brand-title">Hesap101</div>
+          <div class="brand-title">Hesap 101</div>
           <div class="brand-subtitle">Legal</div>
         </div>
       </div>
@@ -147,17 +128,17 @@
         <div class="kicker">Şeffaflık</div>
         <h1 class="h1">Verinizi nasıl işlediğimizi açıkça anlatıyoruz.</h1>
         <p class="lead">
-          Hesap101, kullanıcıların yüklediği fotoğrafları hizmetin iyileştirilmesi ve
-          model eğitimi için işler. Bu sayfada veri toplama ve kullanım kurallarını
-          bulabilirsiniz.
+          Hesap 101, kullanıcıların yüklediği fotoğrafları yalnızca açık onay verdiğinizde
+          hizmeti iyileştirmek ve model eğitimi için işler. Onayınızı uygulama içindeki
+          Ayarlar &gt; Gizlilik bölümünden yönetebilirsiniz.
         </p>
       </div>
       <div class="card lang lang-en">
         <div class="kicker">Transparency</div>
         <h1 class="h1">We explain clearly how we process your data.</h1>
         <p class="lead">
-          Hesap101 processes user-uploaded photos to improve the service and train the model.
-          This page summarizes our data collection and usage rules.
+          Hesap 101 processes user-uploaded photos for service improvement and model training
+          only if you opt in. You can manage this in Settings &gt; Privacy inside the app.
         </p>
       </div>
 
@@ -205,20 +186,24 @@
         <h3 class="lang lang-tr">Hesap Silme</h3>
         <h3 class="lang lang-en">Account Deletion</h3>
         <p class="small lang lang-tr">Hesap silme talebi uygulama içinden yapılır.</p>
+        <p class="small lang lang-tr">Rıza yönetimi: Ayarlar &gt; Gizlilik.</p>
         <p class="small lang lang-en">Account deletion is available inside the app.</p>
+        <p class="small lang lang-en">Consent management: Settings &gt; Privacy.</p>
       </div>
     </section>
 
     <footer class="footer">
-      <span class="lang lang-tr">Son güncelleme: 21 Şubat 2026</span>
-      <span class="lang lang-en">Last updated: February 21, 2026</span>
+      <span class="lang lang-tr">Son güncelleme: 22 Şubat 2026</span>
+      <span class="lang lang-en">Last updated: February 22, 2026</span>
     </footer>
   </div>
 
   <script>
     (function () {
+      const STORAGE_KEY = "hesap101_legal_lang";
       const buttons = document.querySelectorAll(".lang-btn");
       const blocks = document.querySelectorAll(".lang");
+      const links = document.querySelectorAll("a[href]");
 
       function detectLang() {
         const params = new URLSearchParams(window.location.search);
@@ -226,7 +211,32 @@
         if (query === "tr" || query === "en") return query;
         if (window.location.hash === "#en") return "en";
         if (window.location.hash === "#tr") return "tr";
+        try {
+          const stored = window.localStorage.getItem(STORAGE_KEY);
+          if (stored === "tr" || stored === "en") return stored;
+        } catch {}
         return (navigator.language || "").toLowerCase().startsWith("tr") ? "tr" : "en";
+      }
+
+      function syncLinks(lang) {
+        links.forEach((link) => {
+          const rawHref = link.getAttribute("href");
+          if (!rawHref) return;
+          if (/^(mailto:|tel:|javascript:|#)/i.test(rawHref)) return;
+
+          let url;
+          try {
+            url = new URL(rawHref, window.location.href);
+          } catch {
+            return;
+          }
+
+          if (url.origin !== window.location.origin) return;
+          if (!url.pathname.endsWith(".html")) return;
+
+          url.searchParams.set("lang", lang);
+          link.setAttribute("href", `${url.pathname}?${url.searchParams.toString()}${url.hash}`);
+        });
       }
 
       function setLang(lang) {
@@ -241,10 +251,14 @@
         buttons.forEach((btn) => {
           btn.classList.toggle("active", btn.dataset.lang === lang);
         });
+        syncLinks(lang);
         const params = new URLSearchParams(window.location.search);
         params.set("lang", lang);
         const newUrl = `${window.location.pathname}?${params.toString()}`;
         window.history.replaceState({}, "", newUrl);
+        try {
+          window.localStorage.setItem(STORAGE_KEY, lang);
+        } catch {}
       }
 
       buttons.forEach((btn) => {
