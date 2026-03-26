@@ -3,307 +3,732 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Terms of Service | Hesap 101</title>
+  <title>Hesap101 | Terms of Service</title>
+  <meta
+    name="description"
+    content="Hesap101 kullanım koşulları: hizmet kapsamı, kullanıcı yükümlülükleri, sorumluluk sınırları ve iletişim bilgileri."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Merriweather:wght@400;700;900&amp;display=swap"
+    rel="stylesheet"
+  />
   <style>
     :root {
-      --bg: #ffffff;
-      --paper: #ffffff;
-      --ink: #111827;
-      --muted: #4b5563;
-      --accent: #0f6b5b;
-      --border: #e5e7eb;
+      --bg: #f3f5f8;
+      --card: #fff;
+      --ink: #111419;
+      --muted: #586272;
+      --line: #d7deea;
+      --line-strong: #b8c3d3;
+      --accent: #22a884;
+      --accent-soft: rgba(34, 168, 132, 0.12);
+      --max-width: 1120px;
+      --radius-lg: 20px;
+      --radius-md: 12px;
+      --shadow: 0 14px 32px rgba(11, 16, 25, 0.1);
     }
+
     * { box-sizing: border-box; }
+
+    html,
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      min-height: 100%;
       background: var(--bg);
       color: var(--ink);
+      font-family: "Manrope", "Segoe UI", sans-serif;
       line-height: 1.7;
     }
-    a { color: #0b57d0; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .container { max-width: 960px; margin: 0 auto; padding: 24px 16px 48px; }
+
+    body {
+      background-image:
+        radial-gradient(circle at 3% -6%, rgba(75, 102, 255, 0.12), transparent 30%),
+        radial-gradient(circle at 96% 0%, rgba(34, 168, 132, 0.12), transparent 34%);
+    }
+
+    a {
+      color: #1f3550;
+      text-decoration: underline;
+      text-decoration-color: rgba(31, 53, 80, 0.35);
+      text-underline-offset: 3px;
+    }
+
+    .shell {
+      width: min(var(--max-width), calc(100% - 38px));
+      margin: 0 auto;
+    }
+
     .site-header {
-      display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
-      gap: 16px; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 25;
+      backdrop-filter: blur(8px);
+      background: rgba(243, 245, 248, 0.9);
+      border-bottom: 1px solid var(--line);
     }
-    .brand { display: flex; align-items: center; gap: 12px; }
-    .brand-title { font-size: 18px; font-weight: 700; }
-    .nav { display: flex; gap: 16px; flex-wrap: wrap; font-size: 14px; }
-    .language {
+
+    .header-row {
+      min-height: 74px;
       display: flex;
-      gap: 8px;
       align-items: center;
-      font-size: 13px;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+      padding: 12px 0;
     }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      overflow: hidden;
+      flex-shrink: 0;
+      border: 1px solid rgba(75, 102, 255, 0.3);
+      box-shadow: 0 8px 20px rgba(11, 16, 25, 0.2);
+      background: #0d141f;
+    }
+
+    .brand-mark img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      transform: scale(1.05);
+    }
+
+    .brand-name {
+      font-family: "Merriweather", "Manrope", serif;
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+    }
+
+    .brand-tag {
+      display: block;
+      margin-top: -2px;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .nav-link {
+      color: #223247;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 8px 11px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      text-decoration: none;
+    }
+
+    .nav-link:hover {
+      background: rgba(0, 0, 0, 0.04);
+      border-color: var(--line-strong);
+    }
+
+    .nav-link.active {
+      border-color: rgba(34, 168, 132, 0.3);
+      background: var(--accent-soft);
+      color: #0f6b54;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      flex-wrap: wrap;
+    }
+
+    .email-chip {
+      background: rgba(255, 255, 255, 0.95);
+      border: 1px solid var(--line-strong);
+      border-radius: 999px;
+      color: #223247;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 8px 12px;
+      text-decoration: none;
+    }
+
+    .language {
+      display: inline-flex;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.94);
+      padding: 4px;
+      gap: 4px;
+    }
+
     .lang-btn {
-      border: 1px solid var(--border);
-      background: #fff;
-      padding: 6px 10px;
-      border-radius: 6px;
+      border: 0;
+      background: transparent;
+      border-radius: 999px;
+      padding: 6px 11px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      color: #223247;
       cursor: pointer;
+    }
+
+    .lang-btn.active {
+      background: linear-gradient(130deg, #111928, #23344d);
+      color: #fff;
+    }
+
+    main {
+      padding: 34px 0 42px;
+    }
+
+    .hero {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: linear-gradient(180deg, #ffffff, #f8fbff);
+      box-shadow: var(--shadow);
+      padding: clamp(20px, 3vw, 30px);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.11em;
+      font-weight: 800;
+      color: #fff;
+      background: linear-gradient(130deg, #22a884, #4b66ff);
+      border: 1px solid rgba(75, 102, 255, 0.22);
+      border-radius: 999px;
+      padding: 6px 10px;
+      margin-bottom: 14px;
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-family: "Merriweather", "Manrope", serif;
+      font-size: clamp(28px, 4vw, 46px);
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+    }
+
+    .hero p {
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-size: 15px;
+      max-width: 74ch;
+    }
+
+    .meta-row {
+      margin-top: 16px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .meta-pill {
+      background: rgba(255, 255, 255, 0.95);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 7px 10px;
+      font-weight: 700;
+    }
+
+    .layout {
+      margin-top: 16px;
+      display: grid;
+      grid-template-columns: 280px minmax(0, 1fr);
+      gap: 16px;
+      align-items: start;
+    }
+
+    .toc {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.96);
+      padding: 14px;
+      position: sticky;
+      top: 92px;
+    }
+
+    .toc h2 {
+      margin: 0 0 10px;
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 800;
+    }
+
+    .toc ol {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 6px;
+    }
+
+    .toc a {
+      display: block;
+      padding: 7px 9px;
+      border-radius: 8px;
+      color: #223247;
+      font-size: 13px;
+      font-weight: 600;
+      border: 1px solid transparent;
+      text-decoration: none;
+    }
+
+    .toc a:hover {
+      border-color: var(--line-strong);
+      background: rgba(34, 168, 132, 0.08);
+    }
+
+    .article {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: rgba(255, 255, 255, 0.97);
+      box-shadow: var(--shadow);
+      padding: clamp(18px, 2.8vw, 30px);
+    }
+
+    .section {
+      padding-top: 16px;
+      margin-top: 16px;
+      border-top: 1px solid var(--line);
+      scroll-margin-top: 95px;
+    }
+
+    .section:first-child {
+      border-top: 0;
+      margin-top: 0;
+      padding-top: 0;
+    }
+
+    .section h2 {
+      margin: 0;
+      font-family: "Merriweather", "Manrope", serif;
+      font-size: clamp(19px, 2.2vw, 24px);
+      letter-spacing: -0.01em;
+      line-height: 1.28;
+    }
+
+    .section p {
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .section ul {
+      margin: 10px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    .section li {
+      margin: 5px 0;
+    }
+
+    .callout {
+      margin-top: 12px;
+      padding: 12px 14px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--accent);
+      background: rgba(34, 168, 132, 0.08);
+      font-size: 14px;
+      color: #233146;
       font-weight: 600;
     }
-    .lang-btn.active {
-      color: var(--accent);
-      border-color: var(--accent);
-      background: #f0fdf9;
+
+    .table-wrap {
+      margin-top: 12px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.97);
     }
-    .card {
-      background: var(--paper);
-      border-radius: 8px;
-      padding: 18px;
-      border: 1px solid var(--border);
-    }
-    .h1 { font-size: 28px; margin: 0 0 8px; line-height: 1.25; }
-    .small { font-size: 14px; color: var(--muted); }
-    .section { margin-top: 24px; }
-    .section h2 { margin: 0 0 8px; font-size: 18px; line-height: 1.3; }
-    .section p { margin: 8px 0; }
-    .callout {
-      border: 1px solid #d1d5db;
-      border-left: 4px solid var(--accent);
-      background: #f9fafb;
-      padding: 12px 14px;
-      border-radius: 6px;
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
       font-size: 14px;
-      color: var(--ink);
     }
-    .footer { margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--border); font-size: 13px; color: var(--muted); }
+
+    caption {
+      text-align: left;
+      padding: 10px 12px;
+      background: rgba(34, 168, 132, 0.08);
+      color: #17324e;
+      font-weight: 700;
+      font-size: 13px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    th,
+    td {
+      border-bottom: 1px solid var(--line);
+      border-right: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+      padding: 10px 11px;
+    }
+
+    th:last-child,
+    td:last-child {
+      border-right: 0;
+    }
+
+    thead th {
+      background: rgba(75, 102, 255, 0.08);
+      color: #17324e;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    tbody tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .footer {
+      margin-top: 20px;
+      border-top: 1px solid var(--line);
+      padding-top: 14px;
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .footer a {
+      font-weight: 700;
+      color: #223247;
+    }
+
     .lang { display: none; }
     .lang.active { display: block; }
     .lang-inline.active { display: inline; }
-    ul { margin: 8px 0 0 20px; padding: 0; }
-    li { margin: 4px 0; }
+
+    @media (max-width: 980px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      .toc {
+        position: static;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .shell {
+        width: min(var(--max-width), calc(100% - 24px));
+      }
+
+      .nav {
+        order: 3;
+        width: 100%;
+      }
+
+      .nav-link {
+        flex: 1;
+        text-align: center;
+      }
+
+      .meta-row {
+        font-size: 12px;
+      }
+
+      th,
+      td {
+        font-size: 13px;
+      }
+    }
   </style>
 </head>
 <body>
-  <div class="container">
-    <header class="site-header">
-      <div class="brand">
-        <div class="brand-title">Hesap 101</div>
-      </div>
-      <nav class="nav">
-        <a href="index.html">
+  <header class="site-header">
+    <div class="shell header-row">
+      <a class="brand" href="index.html" aria-label="Hesap101 Home">
+        <span class="brand-mark" aria-hidden="true">
+          <img src="assets/hesap101-logo.png" alt="" loading="eager" decoding="async" />
+        </span>
+        <span>
+          <span class="brand-name">Hesap101</span>
+          <span class="brand-tag">Hesap101 Legal</span>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <a class="nav-link" href="index.html">
           <span class="lang lang-tr lang-inline">Ana Sayfa</span>
-          <span class="lang lang-en lang-inline">Home</span>
+          <span class="lang lang-en lang-inline">Landing</span>
         </a>
-        <a href="privacy-policy.html">
+        <a class="nav-link" href="privacy-policy.html">
           <span class="lang lang-tr lang-inline">Gizlilik Politikası</span>
           <span class="lang lang-en lang-inline">Privacy Policy</span>
         </a>
-        <a href="terms-of-service.html">
+        <a class="nav-link active" href="terms-of-service.html" aria-current="page">
           <span class="lang lang-tr lang-inline">Kullanım Koşulları</span>
           <span class="lang lang-en lang-inline">Terms of Service</span>
         </a>
       </nav>
-      <div class="language">
-        <button class="lang-btn" data-lang="tr" type="button">TR</button>
-        <button class="lang-btn" data-lang="en" type="button">EN</button>
+
+      <div class="header-actions">
+        <a class="email-chip" href="mailto:yardimcistudio@gmail.com">yardimcistudio@gmail.com</a>
+        <div class="language" aria-label="Language Switcher">
+          <button class="lang-btn" data-lang="tr" type="button">TR</button>
+          <button class="lang-btn" data-lang="en" type="button">EN</button>
+        </div>
       </div>
-    </header>
+    </div>
+  </header>
 
-    <article class="card">
-      <div class="lang lang-tr">
-        <h1 class="h1">Kullanım Koşulları</h1>
-        <p class="small">Son güncelleme: 22 Şubat 2026</p>
+  <main class="shell">
+    <section class="hero">
+      <span class="eyebrow">
+        <span class="lang lang-tr lang-inline">Hizmet Sözleşmesi</span>
+        <span class="lang lang-en lang-inline">Service Agreement</span>
+      </span>
+      <h1>
+        <span class="lang lang-tr lang-inline">Kullanım Koşulları</span>
+        <span class="lang lang-en lang-inline">Terms of Service</span>
+      </h1>
+      <p class="lang lang-tr">
+        Bu koşullar, Hesap101 hizmetini kullanırken geçerli olan temel kuralları,
+        tarafların sorumluluklarını ve hizmet kapsamını tanımlar.
+      </p>
+      <p class="lang lang-en">
+        These terms define the core rules, responsibilities, and service boundaries
+        that apply when using Hesap101.
+      </p>
+      <div class="meta-row">
+        <span class="meta-pill">
+          <span class="lang lang-tr lang-inline">Son güncelleme: 27 Mart 2026</span>
+          <span class="lang lang-en lang-inline">Last updated: March 27, 2026</span>
+        </span>
+        <span class="meta-pill">
+          <span class="lang lang-tr lang-inline">Uygulama: Hesap101</span>
+          <span class="lang lang-en lang-inline">Application: Hesap101</span>
+        </span>
+      </div>
+    </section>
 
-        <div class="section">
-          <p class="callout">Hesap 101'i kullanarak bu koşulları kabul etmiş olursunuz.</p>
-        </div>
+    <div class="layout">
+      <aside class="toc" aria-label="Table of Contents">
+        <h2>
+          <span class="lang lang-tr lang-inline">İçindekiler</span>
+          <span class="lang lang-en lang-inline">Contents</span>
+        </h2>
+        <ol>
+          <li><a href="#acceptance"><span class="lang lang-tr lang-inline">1. Kabul</span><span class="lang lang-en lang-inline">1. Acceptance</span></a></li>
+          <li><a href="#service"><span class="lang lang-tr lang-inline">2. Hizmet Tanımı</span><span class="lang lang-en lang-inline">2. Service Description</span></a></li>
+          <li><a href="#eligibility"><span class="lang lang-tr lang-inline">3. Uygunluk ve Hesap</span><span class="lang lang-en lang-inline">3. Eligibility and Account</span></a></li>
+          <li><a href="#content"><span class="lang lang-tr lang-inline">4. Kullanıcı İçeriği</span><span class="lang lang-en lang-inline">4. User Content</span></a></li>
+          <li><a href="#use"><span class="lang lang-tr lang-inline">5. Yasaklı Kullanım</span><span class="lang lang-en lang-inline">5. Prohibited Use</span></a></li>
+          <li><a href="#privacy"><span class="lang lang-tr lang-inline">6. Gizlilik ve Rıza</span><span class="lang lang-en lang-inline">6. Privacy and Consent</span></a></li>
+          <li><a href="#payments"><span class="lang lang-tr lang-inline">7. Ücretli Özellikler</span><span class="lang lang-en lang-inline">7. Paid Features</span></a></li>
+          <li><a href="#availability"><span class="lang lang-tr lang-inline">8. Hizmette Değişiklik</span><span class="lang lang-en lang-inline">8. Service Changes</span></a></li>
+          <li><a href="#liability"><span class="lang lang-tr lang-inline">9. Sorumluluk Sınırı</span><span class="lang lang-en lang-inline">9. Limitation of Liability</span></a></li>
+          <li><a href="#termination"><span class="lang lang-tr lang-inline">10. Sonlandırma</span><span class="lang lang-en lang-inline">10. Termination</span></a></li>
+          <li><a href="#law"><span class="lang lang-tr lang-inline">11. Hukuk ve İletişim</span><span class="lang lang-en lang-inline">11. Governing Law and Contact</span></a></li>
+        </ol>
+      </aside>
 
-        <div class="section">
-          <h2>1. Hizmet Tanımı</h2>
-          <p>
-            Hesap 101, kullanıcıların fotoğraf yükleyerek belirli görsel analiz
-            süreçlerinden yararlanmasını sağlayan bir hizmettir.
+      <article class="article">
+        <section class="section" id="acceptance">
+          <h2><span class="lang lang-tr lang-inline">1. Kabul</span><span class="lang lang-en lang-inline">1. Acceptance</span></h2>
+          <p class="lang lang-tr">
+            Hesap101 hizmetini kullanarak bu kullanım koşullarını kabul etmiş olursunuz.
+            Koşulları kabul etmiyorsanız hizmeti kullanmamalısınız.
           </p>
-          <p>
-            Sunulan sonuçlar bilgilendirme ve yardımcı kullanım amaçlıdır; doğruluk her zaman
-            garanti edilmez. Kullanıcı, sonuçları kendi değerlendirmesiyle doğrulamalıdır.
+          <p class="lang lang-en">
+            By using Hesap101, you agree to these Terms of Service.
+            If you do not agree, you should not use the service.
           </p>
-        </div>
+          <div class="callout">
+            <span class="lang lang-tr">Bu metin, kullanıcı ile geliştirici arasındaki temel hizmet sözleşmesidir.</span>
+            <span class="lang lang-en">This document is the base service agreement between user and developer.</span>
+          </div>
+        </section>
 
-        <div class="section">
-          <h2>2. Uygunluk ve Hesap</h2>
-          <p>
-            13 yaşın altındaki kullanıcılar hizmeti kullanamaz. Apple/Google ile
-            giriş kullanıldığında hesap güvenliği kullanıcının sorumluluğundadır.
+        <section class="section" id="service">
+          <h2><span class="lang lang-tr lang-inline">2. Hizmet Tanımı</span><span class="lang lang-en lang-inline">2. Service Description</span></h2>
+          <p class="lang lang-tr">
+            Hesap101, kullanıcıların kamera tabanlı görüntü analiziyle Istakadaki taş düzenini
+            algılamasına yardımcı olan mobil bir hizmettir. Sunulan sonuçlar yardımcı amaçlıdır.
           </p>
-        </div>
-
-        <div class="section">
-          <h2>3. Kullanıcı İçeriği ve Lisans</h2>
-          <p>
-            Yüklediğiniz fotoğrafların size ait olduğunu veya gerekli haklara sahip
-            olduğunuzu beyan edersiniz. Hizmetin sağlanması için, fotoğraflarınızı işlemek
-            amacıyla dünya çapında, devredilebilir olmayan, telifsiz bir lisans verirsiniz.
-            Model eğitimi ve kalite iyileştirme için kullanım ise yalnızca açık rızanızla
-            mümkündür; rızanızı Ayarlar &gt; Gizlilik bölümünden geri çekebilirsiniz.
+          <p class="lang lang-en">
+            Hesap101 is a mobile service that helps users detect rack tile layouts through
+            camera-based visual analysis. Results are provided for assistive purposes.
           </p>
-        </div>
-
-        <div class="section">
-          <h2>4. Kabul Edilemez Kullanım</h2>
-          <p>
-            Yasadışı, üçüncü taraf haklarını ihlal eden, zararlı veya kötüye kullanım
-            amaçlı içerik yüklemek yasaktır.
+          <p class="lang lang-tr">
+            Sonuçlar her durumda mutlak doğruluk garantisi vermez; kullanıcı çıktıları kendi
+            değerlendirmesiyle kullanmalıdır.
           </p>
-        </div>
+          <p class="lang lang-en">
+            Outputs are not guaranteed to be perfectly accurate in all cases; users remain
+            responsible for evaluating and using results appropriately.
+          </p>
+        </section>
 
-        <div class="section">
-          <h2>5. Gizlilik</h2>
-          <p>
-            Kişisel verilerinizin işlenmesi <a href="privacy-policy.html">Gizlilik Politikası</a>
+        <section class="section" id="eligibility">
+          <h2><span class="lang lang-tr lang-inline">3. Uygunluk ve Hesap Güvenliği</span><span class="lang lang-en lang-inline">3. Eligibility and Account Security</span></h2>
+          <p class="lang lang-tr">
+            13 yaşın altındaki kullanıcılar hizmeti kullanamaz. Apple/Google ile girişte hesap bilgilerinin
+            korunması kullanıcı sorumluluğundadır.
+          </p>
+          <p class="lang lang-en">
+            Users under 13 are not allowed to use the service. When signing in with Apple or Google,
+            account credential safety is the user's responsibility.
+          </p>
+        </section>
+
+        <section class="section" id="content">
+          <h2><span class="lang lang-tr lang-inline">4. Kullanıcı İçeriği ve Lisans</span><span class="lang lang-en lang-inline">4. User Content and License</span></h2>
+          <p class="lang lang-tr">
+            Uygulamaya yüklediğiniz içerikler için gerekli haklara sahip olduğunuzu beyan edersiniz.
+            Hizmeti sunabilmemiz için içerikler üzerinde sınırlı, devredilemez ve telifsiz bir işleme
+            izni sağlarsınız.
+          </p>
+          <p class="lang lang-en">
+            You represent that you have the rights required for content you upload.
+            To provide the service, you grant a limited, non-transferable, royalty-free license
+            to process that content.
+          </p>
+        </section>
+
+        <section class="section" id="use">
+          <h2><span class="lang lang-tr lang-inline">5. Yasaklı Kullanım</span><span class="lang lang-en lang-inline">5. Prohibited Use</span></h2>
+          <p class="lang lang-tr">Aşağıdaki kullanım biçimleri yasaktır:</p>
+          <p class="lang lang-en">The following uses are prohibited:</p>
+          <ul class="lang lang-tr">
+            <li>Yasadışı içerik yüklemek veya üçüncü taraf haklarını ihlal etmek</li>
+            <li>Hizmeti kötüye kullanmak, saldırı veya otomasyonla bozmak</li>
+            <li>Hizmeti yanıltıcı veya zararlı amaçlarla kullanmak</li>
+          </ul>
+          <ul class="lang lang-en">
+            <li>Uploading unlawful content or violating third-party rights</li>
+            <li>Abusing, attacking, or disrupting the service through automation</li>
+            <li>Using the service for deceptive or harmful activity</li>
+          </ul>
+        </section>
+
+        <section class="section" id="privacy">
+          <h2><span class="lang lang-tr lang-inline">6. Gizlilik, Rıza ve Veri Kullanımı</span><span class="lang lang-en lang-inline">6. Privacy, Consent, and Data Use</span></h2>
+          <p class="lang lang-tr">
+            Kişisel verilerin işlenmesi
+            <a href="privacy-policy.html">Gizlilik Politikası</a>
             kapsamında yürütülür.
           </p>
-        </div>
-
-        <div class="section">
-          <h2>6. Ücretli Özellikler</h2>
-          <p>
-            İleride ücretli özellikler sunulursa, ödeme ve iptal koşulları uygulama
-            mağazalarının şartlarına tabidir.
+          <p class="lang lang-en">
+            Processing of personal data is governed by the
+            <a href="privacy-policy.html">Privacy Policy</a>.
           </p>
-        </div>
-
-        <div class="section">
-          <h2>7. Hizmet Değişiklikleri ve Sonlandırma</h2>
-          <p>
-            Ahmet Yardımcı hizmette değişiklik yapabilir veya hizmeti sonlandırabilir.
-            Koşullara aykırı kullanım halinde hesabınız askıya alınabilir veya kapatılabilir.
+          <p class="lang lang-tr">
+            Opsiyonel model iyileştirme süreçlerinde veri kullanımı açık rıza gerektirir;
+            rıza ayarları uygulama içinden değiştirilebilir.
           </p>
-        </div>
-
-        <div class="section">
-          <h2>8. Sorumluluğun Sınırlandırılması</h2>
-          <p>
-            Hizmet “olduğu gibi” sunulur. Dolaylı zararlardan Ahmet Yardımcı sorumlu
-            değildir. Yürürlükteki mevzuatın izin verdiği ölçüde sorumluluk sınırlandırılır.
+          <p class="lang lang-en">
+            Optional model improvement uses explicit consent, and consent settings can be changed
+            from inside the app.
           </p>
-        </div>
+        </section>
 
-        <div class="section">
-          <h2>9. Yürürlük ve Değişiklikler</h2>
-          <p>
-            Bu koşullar zaman zaman güncellenebilir. Güncellemeler bu sayfada yayımlanır.
+        <section class="section" id="payments">
+          <h2><span class="lang lang-tr lang-inline">7. Ücretli Özellikler</span><span class="lang lang-en lang-inline">7. Paid Features</span></h2>
+          <p class="lang lang-tr">
+            Gelecekte ücretli özellikler sunulursa ödeme, abonelik ve iptal koşulları ilgili uygulama mağazasının
+            şartlarına tabidir.
           </p>
-        </div>
-
-        <div class="section">
-          <h2>10. İletişim</h2>
-          <p>Sorular için: yardimcistudio@gmail.com</p>
-        </div>
-
-        <div class="section">
-          <h2>11. Uygulanacak Hukuk</h2>
-          <p>Bu koşullar Türkiye Cumhuriyeti hukukuna tabidir.</p>
-        </div>
-      </div>
-
-      <div class="lang lang-en">
-        <h1 class="h1">Terms of Service</h1>
-        <p class="small">Last updated: February 22, 2026</p>
-
-        <div class="section">
-          <p class="callout">By using Hesap 101, you agree to these terms.</p>
-        </div>
-
-        <div class="section">
-          <h2>1. Service Description</h2>
-          <p>
-            Hesap 101 is a service that allows users to upload photos and benefit from
-            certain visual analysis workflows.
+          <p class="lang lang-en">
+            If paid features are introduced, billing, subscription, and cancellation terms are subject
+            to the relevant app store policies.
           </p>
-          <p>
-            Results are provided for informational and assistive purposes only, and accuracy is
-            not guaranteed in every case. You are responsible for verifying outputs before relying
-            on them.
+        </section>
+
+        <section class="section" id="availability">
+          <h2><span class="lang lang-tr lang-inline">8. Hizmette Değişiklikler</span><span class="lang lang-en lang-inline">8. Service Availability and Changes</span></h2>
+          <p class="lang lang-tr">
+            Hesap101'in özellikleri, kapsamı veya teknik altyapısı zaman içinde güncellenebilir,
+            değiştirilebilir veya sonlandırılabilir.
           </p>
-        </div>
-
-        <div class="section">
-          <h2>2. Eligibility and Accounts</h2>
-          <p>
-            Users under the age of 13 are not allowed to use the service. When using
-            Sign in with Apple or Google, account security is the user’s responsibility.
+          <p class="lang lang-en">
+            Hesap101 features, scope, and technical infrastructure may be updated,
+            changed, or discontinued over time.
           </p>
-        </div>
+        </section>
 
-        <div class="section">
-          <h2>3. User Content and License</h2>
-          <p>
-            You represent that you own or have rights to the photos you upload. Ahmet Yardımcı
-            may process your photos to provide the service under a worldwide, non-transferable,
-            royalty-free license. Use for model training and quality improvement is only with your
-            explicit consent; you can withdraw consent in Settings &gt; Privacy.
+        <section class="section" id="liability">
+          <h2><span class="lang lang-tr lang-inline">9. Garanti Reddi ve Sorumluluk Sınırı</span><span class="lang lang-en lang-inline">9. Disclaimer and Limitation of Liability</span></h2>
+          <p class="lang lang-tr">
+            Hizmet "olduğu gibi" sunulur. Mevzuatın izin verdiği ölçüde, dolaylı veya sonuçsal
+            zararlardan geliştirici sorumlu tutulamaz.
           </p>
-        </div>
-
-        <div class="section">
-          <h2>4. Prohibited Use</h2>
-          <p>
-            Uploading unlawful content, content that violates third-party rights, or harmful/malicious
-            content is prohibited.
+          <p class="lang lang-en">
+            The service is provided "as is." To the extent permitted by law, the developer
+            is not liable for indirect or consequential damages.
           </p>
-        </div>
+        </section>
 
-        <div class="section">
-          <h2>5. Privacy</h2>
-          <p>
-            Processing of personal data is governed by the <a href="privacy-policy.html">Privacy Policy</a>.
+        <section class="section" id="termination">
+          <h2><span class="lang lang-tr lang-inline">10. Askıya Alma ve Sonlandırma</span><span class="lang lang-en lang-inline">10. Suspension and Termination</span></h2>
+          <p class="lang lang-tr">
+            Bu koşullara aykırı kullanım durumunda hesaba erişim geçici olarak askıya alınabilir
+            veya tamamen sonlandırılabilir.
           </p>
-        </div>
-
-        <div class="section">
-          <h2>6. Paid Features</h2>
-          <p>
-            If paid features are introduced in the future, payment and cancellation terms are subject
-            to app store policies.
+          <p class="lang lang-en">
+            Access may be temporarily suspended or fully terminated in case of violations
+            of these terms.
           </p>
-        </div>
+        </section>
 
-        <div class="section">
-          <h2>7. Changes and Termination</h2>
-          <p>
-            Ahmet Yardımcı may modify or discontinue the service. If you violate these terms,
-            your account may be suspended or terminated.
+        <section class="section" id="law">
+          <h2><span class="lang lang-tr lang-inline">11. Uygulanacak Hukuk ve İletişim</span><span class="lang lang-en lang-inline">11. Governing Law and Contact</span></h2>
+          <p class="lang lang-tr">
+            Bu koşullar Türkiye Cumhuriyeti hukukuna tabidir. Sorularınız için
+            yardimcistudio@gmail.com adresi üzerinden iletişime geçebilirsiniz.
           </p>
-        </div>
-
-        <div class="section">
-          <h2>8. Limitation of Liability</h2>
-          <p>
-            The service is provided “as is.” Ahmet Yardımcı is not liable for indirect damages
-            to the extent permitted by law.
+          <p class="lang lang-en">
+            These terms are governed by the laws of the Republic of Türkiye.
+            For questions, contact yardimcistudio@gmail.com.
           </p>
-        </div>
+        </section>
 
-        <div class="section">
-          <h2>9. Updates</h2>
-          <p>
-            These terms may be updated from time to time. Updates will be posted on this page.
-          </p>
-        </div>
-
-        <div class="section">
-          <h2>10. Contact</h2>
-          <p>Questions: yardimcistudio@gmail.com</p>
-        </div>
-
-        <div class="section">
-          <h2>11. Governing Law</h2>
-          <p>These terms are governed by the laws of the Republic of Türkiye.</p>
-        </div>
-      </div>
-    </article>
-
-    <footer class="footer">
-      <span class="lang lang-tr">Son güncelleme: 22 Şubat 2026</span>
-      <span class="lang lang-en">Last updated: February 22, 2026</span>
-    </footer>
-  </div>
+        <footer class="footer">
+          <span>
+            <span class="lang lang-tr lang-inline">Son güncelleme: 27 Mart 2026</span>
+            <span class="lang lang-en lang-inline">Last updated: March 27, 2026</span>
+          </span>
+          <a href="privacy-policy.html">
+            <span class="lang lang-tr lang-inline">Gizlilik Politikasına Git</span>
+            <span class="lang lang-en lang-inline">Go to Privacy Policy</span>
+          </a>
+        </footer>
+      </article>
+    </div>
+  </main>
 
   <script>
     (function () {
@@ -318,10 +743,12 @@
         if (query === "tr" || query === "en") return query;
         if (window.location.hash === "#en") return "en";
         if (window.location.hash === "#tr") return "tr";
+
         try {
           const stored = window.localStorage.getItem(STORAGE_KEY);
           if (stored === "tr" || stored === "en") return stored;
         } catch {}
+
         return (navigator.language || "").toLowerCase().startsWith("tr") ? "tr" : "en";
       }
 
@@ -348,6 +775,7 @@
 
       function setLang(lang) {
         document.documentElement.lang = lang;
+
         blocks.forEach((el) => {
           if (el.classList.contains(`lang-${lang}`)) {
             el.classList.add("active");
@@ -355,14 +783,18 @@
             el.classList.remove("active");
           }
         });
+
         buttons.forEach((btn) => {
           btn.classList.toggle("active", btn.dataset.lang === lang);
         });
+
         syncLinks(lang);
+
         const params = new URLSearchParams(window.location.search);
         params.set("lang", lang);
-        const newUrl = `${window.location.pathname}?${params.toString()}`;
-        window.history.replaceState({}, "", newUrl);
+        const next = `${window.location.pathname}?${params.toString()}${window.location.hash}`;
+        window.history.replaceState({}, "", next);
+
         try {
           window.localStorage.setItem(STORAGE_KEY, lang);
         } catch {}
